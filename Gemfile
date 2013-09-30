@@ -5,7 +5,7 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -27,7 +27,22 @@ gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
+group :tools do
+	gem 'guard-rspec'
+end
 
+group :development do
+	gem 'rspec-rails', '~> 2.0'
+	gem 'better_errors'
+	gem "binding_of_caller"
+	gem 'pry-rails'
+end
+
+group :test do
+	gem 'rspec-rails', '~> 2.0'
+	gem "factory_girl_rails"
+	gem "capybara"
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 
