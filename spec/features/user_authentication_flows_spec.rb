@@ -7,7 +7,7 @@ describe "User Authentication" do
      visit "/users/new"
      expect(current_path).to eq(new_user_path)
 
-     within(:css, 'navbar') do
+     within(:css, '.navbar') do
      	find_link("Sign Up").visible?
      end
 
@@ -21,7 +21,7 @@ describe "User Authentication" do
 
      expect(current_path).to eq(root_path)
 
-     expect(page).to have_content("Account created")
+     expect(page).to have_content("Account Created")
 
      within(:css, '.navbar') do
      	has_no_link?('Sign Up')
