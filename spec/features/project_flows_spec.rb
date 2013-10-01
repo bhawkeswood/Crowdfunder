@@ -31,6 +31,8 @@ describe "Project Listing" do
 		end
 
 		it "should display the navigation" do
+			project1 = FactoryGirl.create(:project, :title => "Project 1")
+
 			visit "/"
 
 			expect(current_path).to eq(root_path)
@@ -42,6 +44,9 @@ describe "Project Listing" do
 			expect(current_path).to eq(projects_path)
 
 			page.should have_selector('.navbar ul li.active a', text: "Projects")
+			expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
+
+			click_link 'Project 1'
 			expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
 		end
 	end
