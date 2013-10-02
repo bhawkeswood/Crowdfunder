@@ -1,5 +1,10 @@
 Crowdfunder::Application.routes.draw do
   
+  resources :sessions
+
+  get 'login' => 'sessions#new', :as => "login"
+  get 'logout' => 'sessions#destroy', :as => "logout"
+
   resources :users, :except => [:index]
 
   get "welcome/index"
