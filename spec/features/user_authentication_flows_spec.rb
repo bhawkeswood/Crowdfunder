@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "User Authentication" do
+describe "User Authentication", js: true do 
   describe "when visiting the sign in page" do
     it "should successfully register a user" do
      
@@ -17,6 +17,7 @@ describe "User Authentication" do
      fill_in "user[first_name]", :with => user.first_name
      fill_in "user[last_name]", :with => user.last_name
      fill_in "user[password]", :with => user.password
+     fill_in "user[password_confirmation]", :with => user.password
      click_button "Create Account"
 
      expect(current_path).to eq(root_path)

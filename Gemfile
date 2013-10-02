@@ -33,18 +33,16 @@ group :tools do
 	gem 'guard-rspec'
 end
 
-group :development do
+group :development, :test do
 	gem 'rspec-rails', '~> 2.0'
 	gem 'better_errors'
+	gem "factory_girl_rails"
 	gem "binding_of_caller"
 	gem 'pry-rails'
-end
-
-group :test do
-	gem 'rspec-rails', '~> 2.0'
-	gem "factory_girl_rails"
+	gem 'selenium-webdriver'
 	gem "capybara"
 end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
