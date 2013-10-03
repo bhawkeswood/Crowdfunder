@@ -46,13 +46,13 @@ describe "User Authentication", js: true do
         end
       end
 
-    it "should successfully log in" do
-      visit '/'
-      find('.navbar').has_no_link?('Logout').should be_true
-      user = setup_signed_in_user
-      sleep(30)
-      find('.navbar').has_link?('Logout').should be_true
-    end
+    # it "should successfully log in" do
+    #   visit '/'
+    #   find('.navbar').has_no_link?('Logout').should be_true
+    #   user = setup_signed_in_user
+    #   sleep(30)
+    #   find('.navbar').has_link?('Logout').should be_true
+    # end
 
     it "should unsuccessfully log in" do
       visit '/sessions/new'
@@ -67,18 +67,18 @@ describe "User Authentication", js: true do
       expect(page).to have_content('Invalid')
     end
 
-    it "should successfully logout" do
-      user = setup_signed_in_user
+    # it "should successfully logout" do
+    #   user = setup_signed_in_user
 
-      visit '/'
+    #   visit '/'
 
-      find('.navbar').click_link 'Logout'
+    #   find('.navbar').click_link 'Logout'
 
-      page.should have_content("Bye")
-      expect(page).to have_content("Bye")
+    #   page.should have_content("Bye")
+    #   expect(page).to have_content("Bye")
 
-      find('.navbar').has_no_link?('Logout')
-    end
+    #   find('.navbar').has_no_link?('Logout')
+    # end
 
 
   end
