@@ -43,14 +43,10 @@ describe Pledge do
 		pledge.should_not == pledge.save
 
 		pledge.should have(1).errors_on(:amount)
-		expect(pledge).to have(1).errors_on(:pledge)
+		expect(pledge).to have(1).errors_on(:amount)
 	end
 
 end
-
-
-
-
 
 
 
