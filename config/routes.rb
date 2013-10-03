@@ -1,5 +1,6 @@
 Crowdfunder::Application.routes.draw do
   
+
   resources :sessions
 
   get 'login' => 'sessions#new', :as => "login"
@@ -11,7 +12,9 @@ Crowdfunder::Application.routes.draw do
 
   # get "projects/index"
 
-  resources :projects
+  resources :projects do
+    resources :pledges, :only => [:new, :create]
+  end
 
   root to: 'welcome#index'
   # The priority is based upon order of creation:
