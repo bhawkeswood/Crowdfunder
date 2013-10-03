@@ -17,7 +17,7 @@ describe "User Authentication", js: true do
      fill_in "user[first_name]", :with => user.first_name
      fill_in "user[last_name]", :with => user.last_name
      fill_in "user[password]", :with => user.password
-     fill_in "user[password_confirmation]", :with => user.password
+     # fill_in "user[password_confirmation]", :with => user.password
      click_button "Create Account"
 
      expect(current_path).to eq(root_path)
@@ -50,6 +50,7 @@ describe "User Authentication", js: true do
       visit '/'
       find('.navbar').has_no_link?('Logout').should be_true
       user = setup_signed_in_user
+      sleep(30)
       find('.navbar').has_link?('Logout').should be_true
     end
 

@@ -1,4 +1,4 @@
-module SessionsSupport
+module SessionSupport
 
 	def setup_signed_in_user
 		pass = "this-is-a-password"

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
       auto_login(@user)
-  		redirect_to root_url, :notice => "Account Created"
+  		redirect_to root_url, :notice => "Account Created.  Welcome #{@user.first_name}."
   	else
   		render :new
   	end
