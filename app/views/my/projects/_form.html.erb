@@ -1,0 +1,26 @@
+<%= form_for [:my, @project] do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :teaser %>
+    <%= f.text_field :teaser %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :goal %>
+    <%= f.text_field :goal %>
+  </div>
+  <div class="action">
+    <% if current_page? new_my_project_path %>
+      <%= f.submit "Publish Project" %>
+    <% else %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+<% end %>

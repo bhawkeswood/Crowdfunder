@@ -1,6 +1,10 @@
 Crowdfunder::Application.routes.draw do
   
 
+  namespace :my do
+    resources :projects
+  end
+
   resources :sessions
 
   get 'login' => 'sessions#new', :as => "login"

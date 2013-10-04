@@ -1,0 +1,9 @@
+<h1>Hi!  Here are your projects: </h1>
+
+<% @projects.each do |project| %>
+	<div><%= link_to project.title, project %>
+	</div>
+<% end %>
+
+<h3> Would you like to make a new project? </h3>
+<%= link_to "New Project", new_my_project_path, class: 'btn btn-success' %>

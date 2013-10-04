@@ -6,10 +6,15 @@
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="<%= 'active' if current_page? root_path %>">
-							<%= link_to 'Home', :root %>
+							<%= link_to 'Home', :root %> 
 						</li>
 						<li class="<%= 'active' if current_page? projects_path or @project %>">
 							<%= link_to 'Projects', :projects %>
+						</li>
+						<li class="<%= 'active' if current_page? my_projects_path %>">
+							<% if logged_in? %>
+								<%= link_to 'My Projects', my_projects_path %>
+							<% end %>
 						</li>
 					</ul>
 						<div class="pull-right">

@@ -7,8 +7,7 @@ describe "Project Listing" do
 			other_user = FactoryGirl.create :other_user
 
 			3.times { FactoryGirl.create :project, user: me }
-			2.times { FactoryGirl.create :project, user: other_user, 
-				title: "Other Dude's Project" }
+			2.times { FactoryGirl.create :project, user: other_user, title: "Other Dude's Project" }
 			
 			visit '/my/projects'
 
@@ -51,7 +50,7 @@ describe "Project Listing" do
 
 			project = FactoryGirl.build(:project, user: me)
 
-			visit 'my/project/new'
+			visit 'my/projects/new'
 
 			fill_in 'project[title]', with: "Test Project"
 			fill_in 'project[teaser]', with: "Test Project Teaser"

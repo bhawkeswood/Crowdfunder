@@ -3,16 +3,26 @@
 </h1>
 
 <div>
-	Created by: <%= @project.user.first_name %> 
-				<%= @project.user.last_name %>
-
+	Created by: <%= @project.user.first_name %> <%= @project.user.last_name %>
 </div>
 
 <div class="instructions">
-	Pledge me some bread homeboy!
+	
+	<h2>Pledges Goal: <%= @project.goal %></h2>
+	
+	<h3>So far, here are the pledges for this project:</h3>
+		<% @project.pledges.each do |pledge| %>
+	<p><strong><%=pledge.user.first_name %></strong></p>
+		<p>Pledged: <%= pledge.amount %></p>
+	<% end %>
 </div>
 
 <div>
-	<%= link_to "Back This Project", new_project_pledge_path(@project), class: 'btn btn-info'%>
+	<% if current_user == @project.user %>
+		<%= link_to 'Update This Project', edit_my_project_path(@project), class: 'btn btn-info' %>
+		<%= link_to 'Delete This Project', @project, :confirm => "Are you sure you want to delete this project?", :method => :delete, class: 'btn btn-warning' %>
+	<% else %>
+		<%= link_to "Back This Project", new_project_pledge_path(@project), class: 'btn btn-info'%>
+	<% end %>
 </div>
 
