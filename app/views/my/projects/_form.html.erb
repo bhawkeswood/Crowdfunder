@@ -15,6 +15,10 @@
     <%= f.label :goal %>
     <%= f.text_field :goal %>
   </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
   <div class="action">
     <% if current_page? new_my_project_path %>
       <%= f.submit "Publish Project" %>

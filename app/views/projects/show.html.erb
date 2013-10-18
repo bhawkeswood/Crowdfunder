@@ -9,7 +9,7 @@
 <div class="instructions">
 	
 	<h2>Pledges Goal: <%= @project.goal %></h2>
-	
+	<%= image_tag @project.image_url if @project.image? %>
 	<h3>So far, here are the pledges for this project:</h3>
 		<% @project.pledges.each do |pledge| %>
 	<p><strong><%=pledge.user.first_name %></strong></p>

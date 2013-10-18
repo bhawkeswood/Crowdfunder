@@ -2,7 +2,14 @@
 <h1>Listing projects</h1>
 
 
+<%= paginate @projects %>
+
 <% @projects.each do |project| %>
-	<div><%= link_to project.title, project %>
+	<div>
+	<ul><%= link_to project.title, project %>
+		<li><%= project.req_one, project %></li>
+		<li><%= project.req_two, project %></li>
+		<li><%= project.req_three, project %></li>
+	</ul>
 	</div>
 <% end %>
